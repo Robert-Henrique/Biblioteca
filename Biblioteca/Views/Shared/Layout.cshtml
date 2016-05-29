@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <script src="~/Script/Jquery/jquery-2.2.3.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="~/Script/Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="~/Script/Bootstrap/js/bootstrap.min.js"></script>
+    
+    <script src="~/Script/Bootbox/bootbox.js"></script>
+    
+    <script src="~/Script/AngularJS/angular.min.js"></script>
+    <script src="~/Script/AngularJS/angular-route.js"></script>
+    <script src="~/Script/angular-ui/ui-bootstrap.js"></script>
+
+    <script src="~/Script/Modulo.js"></script>
+    <script src="~/Script/services/livro-service.js"></script>
+    <script src="~/Script/controllers/Livro/lista-controller.js"></script>
+    <script src="~/Script/controllers/Livro/detalhes-controller.js"></script>
+</head>
+<body>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Biblioteca Pombus</p>
+        </footer>
+    </div>
+</body>
+</html>

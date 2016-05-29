@@ -1,0 +1,35 @@
+﻿<div>
+    <h2>Adicionar Livro</h2>
+</div>
+<!-- FORM -->
+<!-- $valid -- É válido se todos os campos obrigatórios estiverem preenchidos -->
+<!-- novalidate isso vai evitar a validação padrão do HTML5, já que vamos fazer isso usando o Angular -->
+<form name="detalhesForm" ng-submit="detalhesForm.$valid" novalidate>
+    <div ng-controller="detalhesController" class="form-horizontal">
+        <hr />
+        <div class="form-group" ng-show="livro.Id > 0">
+            <label class="control-label col-md-2">ID:</label>
+            <div class="col-md-1">
+                <input id="nome" class="form-control" type="text" data-ng-model="livro.Id" ng-disabled="true" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Título:</label>
+            <div class="col-md-3">
+                <input id="nome" class="form-control" type="text" data-ng-model="livro.Titulo" placeholder="Informe o titulo..." required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Ano de Publicação:</label>
+            <div class="col-md-3">
+                <input id="nome" class="form-control" type="text" data-ng-model="livro.AnoPublicacao" placeholder="Informe o ano de publicação..." required />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button class="btn btn-default btn-info" type="button" data-ng-click="salvar()" ng-disabled="detalhesForm.$invalid">Salvar</button>
+                <button ng-click="voltar()" class="btn btn-default btn-info" type="submit">Voltar</button>
+            </div>
+        </div>
+    </div>
+</form>

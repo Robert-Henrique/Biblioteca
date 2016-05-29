@@ -1,0 +1,42 @@
+﻿
+<div ng-controller="listaController" ng-init="obterLivros()">
+    <h2>Livros</h2>
+    <p>
+        <a href="#/detalhes">Cadastrar Livro</a>
+    </p>
+    <div class="form-group">
+        <label>Filtrar</label>
+        <input type="text" ng-model="filtro" class="form-control" placeholder="Digite para filtrar...">
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-condensed table-striped table-bordered table-hover no-margin">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Título</th>
+                    <th>Ano de Publicação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="livro in livros | orderBy: 'Id' | filter: filtro">
+                <tr>
+                    <td>{{livro.Id}}</td>
+                    <td>{{livro.Titulo}}</td>
+                    <td>{{livro.AnoPublicacao}}</td>
+                    <td>
+                        <a href="#/detalhes/{{livro.Id}}" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+
+                        <button ng-click="excluir(livro)" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
