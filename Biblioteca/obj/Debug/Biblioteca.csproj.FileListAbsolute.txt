@@ -55,3 +55,34 @@ C:\Users\Robert\Google Drive\Projetos C#\AngularJS\Biblioteca\Biblioteca\bin\Sys
 C:\Users\Robert\Google Drive\Projetos C#\AngularJS\Biblioteca\Biblioteca\bin\WebGrease.dll
 C:\Users\Robert\Google Drive\Projetos C#\AngularJS\Biblioteca\Biblioteca\bin\Antlr3.Runtime.pdb
 C:\Users\Robert\Google Drive\Projetos C#\AngularJS\Biblioteca\Biblioteca\bin\System.Web.Optimization.xml
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\Biblioteca.dll.config
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\Biblioteca.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\Biblioteca.pdb
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\Antlr3.Runtime.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\EntityFramework.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\EntityFramework.SqlServer.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\Newtonsoft.Json.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.Helpers.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.Mvc.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.Optimization.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.Razor.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.WebPages.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.WebPages.Razor.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\WebGrease.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\Antlr3.Runtime.pdb
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\EntityFramework.xml
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\EntityFramework.SqlServer.xml
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\Newtonsoft.Json.xml
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.Optimization.xml
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.Helpers.xml
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.Mvc.xml
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.Razor.xml
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.WebPages.xml
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.WebPages.Razor.xml
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\obj\Debug\Biblioteca.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\obj\Debug\Biblioteca.pdb
