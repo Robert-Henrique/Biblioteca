@@ -26,7 +26,7 @@
     };
 
     $scope.voltar = function () {
-        var url = window.location.protocol + '//' + window.location.host;
+        var url = window.location.protocol + '//' + window.location.host + "#/livros";
         window.location = url;
     };
 });

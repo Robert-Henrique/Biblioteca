@@ -173,6 +173,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="Dashboard.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -220,9 +221,9 @@
     <Content Include="Script\controllers\Livro\lista-controller.js" />
     <Content Include="Script\Modulo.js" />
     <Content Include="Script\services\livro-service.js" />
-    <Content Include="Script\Templates\Home\Home.html" />
-    <Content Include="Script\Templates\Livro\Detalhes.html" />
-    <Content Include="Script\Templates\Livro\Index.html" />
+    <Content Include="Script\Livros\Home\Home.html" />
+    <Content Include="Script\Livros\Livro\Detalhes.html" />
+    <Content Include="Script\Livros\Livro\Index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

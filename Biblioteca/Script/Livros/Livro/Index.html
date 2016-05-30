@@ -2,7 +2,7 @@
 <div ng-controller="listaController" ng-init="obterLivros()">
     <h2>Livros</h2>
     <p>
-        <a href="#/detalhes">Cadastrar Livro</a>
+        <a href="#/livros/detalhes">Cadastrar Livro</a>
     </p>
     <div class="form-group">
         <label>Filtrar</label>
@@ -25,7 +25,7 @@
                     <td>{{livro.Titulo}}</td>
                     <td>{{livro.AnoPublicacao}}</td>
                     <td>
-                        <a href="#/detalhes/{{livro.Id}}" class="btn btn-default btn-sm">
+                        <a href="#livros/detalhes/{{livro.Id}}" class="btn btn-default btn-sm">
                             <span class="glyphicon glyphicon-pencil"></span>
                         </a>
 
