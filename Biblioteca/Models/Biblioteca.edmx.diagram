@@ -5,15 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2ad0d76c6367433f9200bd1179eaadf7" Name="Diagram1">
-        <EntityTypeShape EntityType="BibliotecaModel.Aluguel" Width="1.5" PointX="3.375" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BibliotecaModel.Cliente" Width="1.5" PointX="3.375" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BibliotecaModel.Livro" Width="1.5" PointX="6.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BibliotecaModel.PessoaFisica" Width="1.5" PointX="6.125" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BibliotecaModel.PessoaJuridica" Width="1.5" PointX="0.875" PointY="4.25" IsExpanded="true" />
-        <AssociationConnector Association="BibliotecaModel.FK__Aluguel__Cliente__1CF15040" ManuallyRouted="false" />
-        <AssociationConnector Association="BibliotecaModel.FK__Aluguel__LivroId__1DE57479" ManuallyRouted="false" />
-        <AssociationConnector Association="BibliotecaModel.FK__PessoaFisica__Id__15502E78" ManuallyRouted="false" />
-        <AssociationConnector Association="BibliotecaModel.FK__PessoaJuridi__Id__182C9B23" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BibliotecaModel.Cidade" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="BibliotecaModel.Cliente" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="BibliotecaModel.Estado" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="BibliotecaModel.Livro" Width="1.5" PointX="3" PointY="3.75" />
+        <AssociationConnector Association="BibliotecaModel.FK__Cliente__CidadeI__5070F446" />
+        <AssociationConnector Association="BibliotecaModel.FK_dbo_Cidade_dbo_Estado_EstadoId" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

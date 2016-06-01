@@ -12,14 +12,18 @@ namespace Biblioteca.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Aluguel
+    public partial class Cidade
     {
-        public int Id { get; set; }
-        public int ClienteId { get; set; }
-        public int LivroId { get; set; }
-        public System.DateTime Data { get; set; }
+        public Cidade()
+        {
+            this.Cliente = new HashSet<Cliente>();
+        }
     
-        public virtual Cliente Cliente { get; set; }
-        public virtual Livro Livro { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public int EstadoId { get; set; }
+    
+        public virtual ICollection<Cliente> Cliente { get; set; }
+        public virtual Estado Estado { get; set; }
     }
 }

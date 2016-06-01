@@ -14,18 +14,13 @@ namespace Biblioteca.Models
     
     public partial class Cliente
     {
-        public Cliente()
-        {
-            this.Aluguel = new HashSet<Aluguel>();
-        }
-    
         public int Id { get; set; }
         public string Nome { get; set; }
+        public string CPF { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
+        public int CidadeId { get; set; }
     
-        public virtual ICollection<Aluguel> Aluguel { get; set; }
-        public virtual PessoaFisica PessoaFisica { get; set; }
-        public virtual PessoaJuridica PessoaJuridica { get; set; }
+        public virtual Cidade Cidade { get; set; }
     }
 }

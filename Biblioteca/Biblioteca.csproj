@@ -131,9 +131,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Aluguel.cs">
-      <DependentUpon>Biblioteca.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Biblioteca.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -150,16 +147,16 @@
       <DependentUpon>Biblioteca.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Business\LivroBusiness.cs" />
+    <Compile Include="Models\Cidade.cs">
+      <DependentUpon>Biblioteca.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Cliente.cs">
       <DependentUpon>Biblioteca.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Estado.cs">
+      <DependentUpon>Biblioteca.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Livro.cs">
-      <DependentUpon>Biblioteca.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PessoaFisica.cs">
-      <DependentUpon>Biblioteca.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PessoaJuridica.cs">
       <DependentUpon>Biblioteca.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

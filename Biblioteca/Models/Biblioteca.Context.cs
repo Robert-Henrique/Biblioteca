@@ -25,10 +25,9 @@ namespace Biblioteca.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Aluguel> Aluguel { get; set; }
+        public virtual DbSet<Cidade> Cidade { get; set; }
         public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<Estado> Estado { get; set; }
         public virtual DbSet<Livro> Livro { get; set; }
-        public virtual DbSet<PessoaFisica> PessoaFisica { get; set; }
-        public virtual DbSet<PessoaJuridica> PessoaJuridica { get; set; }
     }
 }

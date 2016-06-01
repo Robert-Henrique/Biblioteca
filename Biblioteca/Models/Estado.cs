@@ -12,12 +12,17 @@ namespace Biblioteca.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PessoaJuridica
+    public partial class Estado
     {
-        public int Id { get; set; }
-        public string CNPJ { get; set; }
-        public int ClienteId { get; set; }
+        public Estado()
+        {
+            this.Cidade = new HashSet<Cidade>();
+        }
     
-        public virtual Cliente Cliente { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string UF { get; set; }
+    
+        public virtual ICollection<Cidade> Cidade { get; set; }
     }
 }

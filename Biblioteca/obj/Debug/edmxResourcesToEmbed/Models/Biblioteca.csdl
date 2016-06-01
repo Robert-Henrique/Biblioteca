@@ -1,124 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BibliotecaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Aluguel">
+  <EntityContainer Name="BibliotecaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cidade" EntityType="BibliotecaModel.Cidade" />
+    <EntitySet Name="Cliente" EntityType="BibliotecaModel.Cliente" />
+    <EntitySet Name="Estado" EntityType="BibliotecaModel.Estado" />
+    <EntitySet Name="Livro" EntityType="BibliotecaModel.Livro" />
+    <AssociationSet Name="FK__Cliente__CidadeI__5070F446" Association="BibliotecaModel.FK__Cliente__CidadeI__5070F446">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Cidade_dbo_Estado_EstadoId" Association="BibliotecaModel.FK_dbo_Cidade_dbo_Estado_EstadoId">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Cidade" EntitySet="Cidade" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cidade">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ClienteId" Type="Int32" Nullable="false" />
-    <Property Name="LivroId" Type="Int32" Nullable="false" />
-    <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="Cliente" Relationship="Self.FK__Aluguel__Cliente__1CF15040" FromRole="Aluguel" ToRole="Cliente" />
-    <NavigationProperty Name="Livro" Relationship="Self.FK__Aluguel__LivroId__1DE57479" FromRole="Aluguel" ToRole="Livro" />
+    <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EstadoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="BibliotecaModel.FK__Cliente__CidadeI__5070F446" FromRole="Cidade" ToRole="Cliente" />
+    <NavigationProperty Name="Estado" Relationship="BibliotecaModel.FK_dbo_Cidade_dbo_Estado_EstadoId" FromRole="Cidade" ToRole="Estado" />
   </EntityType>
   <EntityType Name="Cliente">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CPF" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
     <Property Name="Telefone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Aluguel" Relationship="Self.FK__Aluguel__Cliente__1CF15040" FromRole="Cliente" ToRole="Aluguel" />
-    <NavigationProperty Name="PessoaFisica" Relationship="Self.FK__PessoaFisica__Id__15502E78" FromRole="Cliente" ToRole="PessoaFisica" />
-    <NavigationProperty Name="PessoaJuridica" Relationship="Self.FK__PessoaJuridi__Id__182C9B23" FromRole="Cliente" ToRole="PessoaJuridica" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CidadeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cidade" Relationship="BibliotecaModel.FK__Cliente__CidadeI__5070F446" FromRole="Cliente" ToRole="Cidade" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cidade" Relationship="BibliotecaModel.FK_dbo_Cidade_dbo_Estado_EstadoId" FromRole="Estado" ToRole="Cidade" />
   </EntityType>
   <EntityType Name="Livro">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Titulo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="AnoPublicacao" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Aluguel" Relationship="Self.FK__Aluguel__LivroId__1DE57479" FromRole="Livro" ToRole="Aluguel" />
   </EntityType>
-  <EntityType Name="PessoaFisica">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CPF" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ClienteId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Cliente" Relationship="Self.FK__PessoaFisica__Id__15502E78" FromRole="PessoaFisica" ToRole="Cliente" />
-  </EntityType>
-  <EntityType Name="PessoaJuridica">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CNPJ" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ClienteId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Cliente" Relationship="Self.FK__PessoaJuridi__Id__182C9B23" FromRole="PessoaJuridica" ToRole="Cliente" />
-  </EntityType>
-  <Association Name="FK__Aluguel__Cliente__1CF15040">
-    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
-    <End Role="Aluguel" Type="Self.Aluguel" Multiplicity="*" />
+  <Association Name="FK__Cliente__CidadeI__5070F446">
+    <End Type="BibliotecaModel.Cidade" Role="Cidade" Multiplicity="1" />
+    <End Type="BibliotecaModel.Cliente" Role="Cliente" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Cliente">
+      <Principal Role="Cidade">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Aluguel">
-        <PropertyRef Name="ClienteId" />
+      <Dependent Role="Cliente">
+        <PropertyRef Name="CidadeId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Aluguel__LivroId__1DE57479">
-    <End Role="Livro" Type="Self.Livro" Multiplicity="1" />
-    <End Role="Aluguel" Type="Self.Aluguel" Multiplicity="*" />
+  <Association Name="FK_dbo_Cidade_dbo_Estado_EstadoId">
+    <End Type="BibliotecaModel.Estado" Role="Estado" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BibliotecaModel.Cidade" Role="Cidade" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Livro">
+      <Principal Role="Estado">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Aluguel">
-        <PropertyRef Name="LivroId" />
+      <Dependent Role="Cidade">
+        <PropertyRef Name="EstadoId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__PessoaFisica__Id__15502E78">
-    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
-    <End Role="PessoaFisica" Type="Self.PessoaFisica" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Cliente">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PessoaFisica">
-        <PropertyRef Name="Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__PessoaJuridi__Id__182C9B23">
-    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
-    <End Role="PessoaJuridica" Type="Self.PessoaJuridica" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Cliente">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="PessoaJuridica">
-        <PropertyRef Name="Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="BibliotecaEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Aluguel" EntityType="Self.Aluguel" />
-    <EntitySet Name="Cliente" EntityType="Self.Cliente" />
-    <EntitySet Name="Livro" EntityType="Self.Livro" />
-    <EntitySet Name="PessoaFisica" EntityType="Self.PessoaFisica" />
-    <EntitySet Name="PessoaJuridica" EntityType="Self.PessoaJuridica" />
-    <AssociationSet Name="FK__Aluguel__Cliente__1CF15040" Association="Self.FK__Aluguel__Cliente__1CF15040">
-      <End Role="Cliente" EntitySet="Cliente" />
-      <End Role="Aluguel" EntitySet="Aluguel" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Aluguel__LivroId__1DE57479" Association="Self.FK__Aluguel__LivroId__1DE57479">
-      <End Role="Livro" EntitySet="Livro" />
-      <End Role="Aluguel" EntitySet="Aluguel" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PessoaFisica__Id__15502E78" Association="Self.FK__PessoaFisica__Id__15502E78">
-      <End Role="Cliente" EntitySet="Cliente" />
-      <End Role="PessoaFisica" EntitySet="PessoaFisica" />
-    </AssociationSet>
-    <AssociationSet Name="FK__PessoaJuridi__Id__182C9B23" Association="Self.FK__PessoaJuridi__Id__182C9B23">
-      <End Role="Cliente" EntitySet="Cliente" />
-      <End Role="PessoaJuridica" EntitySet="PessoaJuridica" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>
