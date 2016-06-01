@@ -15,7 +15,7 @@ namespace Biblioteca.Models.Business
             return bd.Livro.ToList();
         }
 
-        public IQueryable Obter2()
+        public IQueryable<Livro> Obter2()
         {
             return bd.Livro;
         }

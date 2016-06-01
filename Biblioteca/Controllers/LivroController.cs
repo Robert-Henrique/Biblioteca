@@ -14,15 +14,15 @@ namespace Biblioteca.Controllers
         private LivroBusiness _livroBusiness = new LivroBusiness();
 
         [HttpGet]
-        public JsonResult Listar(int Id)
+        public JsonResult Listar(int range, string filtro)
         {
-            int range = (Id - 1) * 10;
-            var livros = _livroBusiness.Obter();
-            
-            int total = livros.Count;
+            range = (range - 1) * 10;
+            var livros = _livroBusiness.Obter2().Where(l => string.IsNullOrEmpty(filtro) || l.Titulo.Contains(filtro));
+
+            int total = livros.Count();
 
             return Json(new {
-                livros = livros.Skip(range).Take(10),
+                livros = livros.OrderBy(l => l.Id).Skip(range).Take(10),
                 totalItens = total
             }, JsonRequestBehavior.AllowGet);
         }

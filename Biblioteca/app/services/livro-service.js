@@ -1,7 +1,7 @@
 ﻿app.service("livroService", function ($http) {
 
-    this.getLivros = function (range) {
-        return $http.get("Livro/Listar/" + range);
+    this.getLivros = function (range, filtro) {
+        return $http.get("Livro/Listar/" + range + "/" + filtro);
     }
 
     this.getLivro = function (Id) {

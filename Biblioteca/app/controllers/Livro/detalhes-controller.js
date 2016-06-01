@@ -8,13 +8,7 @@
         });
     }
 
-    $scope.salvar = function () {
-
-        var livro = {
-            Id: $scope.livro.Id,
-            Titulo: $scope.livro.Titulo,
-            AnoPublicacao: $scope.livro.AnoPublicacao
-        };
+    $scope.salvar = function (livro) {
 
         livroService.salvar(livro).success(function (data) {
             bootbox.alert("Livro salvo com sucesso.", function () {

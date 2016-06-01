@@ -5,7 +5,7 @@
     </p>
     <div class="form-group">
         <label>Filtrar</label>
-        <input type="text" ng-model="filtro" class="form-control" placeholder="Digite para filtrar...">
+        <input type="text" ng-model="filtro" ng-change="pesquisaAlterada()" class="form-control" placeholder="Digite para filtrar...">
     </div>
 
     <div class="table-responsive">
@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="livro in livros | orderBy: 'Id' | filter: filtro">
+                <tr ng-repeat="livro in livros">
                     <td>{{livro.Id}}</td>
                     <td>{{livro.Titulo}}</td>
                     <td>{{livro.AnoPublicacao}}</td>

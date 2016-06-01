@@ -3,10 +3,12 @@
     $scope.currentPage = 1;
     $scope.maxSize = 10;
 
+    $scope.filtro = "";
+
     $scope.livros = [];
 
     $scope.obterLivros = function () {
-        livroService.getLivros($scope.currentPage).success(function (data) {
+        livroService.getLivros($scope.currentPage, $scope.filtro).success(function (data) {
             $scope.livros = data.livros;
             $scope.totalItens = data.totalItens;
         }).error(function (erro) {
@@ -27,6 +29,10 @@
     };
 
     $scope.paginaAlterada = function () {
-        $scope.obterLivros($scope.currentPage);
+        $scope.obterLivros($scope.currentPage, $scope.filtro);
+    };
+
+    $scope.pesquisaAlterada = function () {
+        $scope.obterLivros($scope.currentPage, $scope.filtro);
     };
 });
