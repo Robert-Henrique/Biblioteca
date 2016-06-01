@@ -1,9 +1,36 @@
-﻿
-@{
-    ViewBag.Title = "Home Page";
-    Layout = "~/Views/Shared/Layout.cshtml";
-}
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
 
-<div>
-    <div ng-view></div>
-</div>
+    <script src="~/Script/Jquery/jquery-2.2.3.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="~/Script/Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="~/Script/Bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="~/Script/Bootbox/bootbox.js"></script>
+
+    <script src="~/Script/AngularJS/angular.min.js"></script>
+    <script src="~/Script/AngularJS/angular-route.js"></script>
+    <script src="~/Script/Angular ui/ui-bootstrap-tpls-1.3.3.js"></script>
+
+    <script src="~/app/Modulo.js"></script>
+    <script src="~/app/services/livro-service.js"></script>
+    <script src="~/app/controllers/Livro/lista-controller.js"></script>
+    <script src="~/app/controllers/Livro/detalhes-controller.js"></script>
+</head>
+<body>
+    <div class="container body-content">
+        <div class="container body-content">
+            <div ng-view></div>
+        </div>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Biblioteca Pombus</p>
+        </footer>
+    </div>
+</body>
+</html>

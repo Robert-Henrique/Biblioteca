@@ -173,7 +173,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
-    <Content Include="Dashboard.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -970,7 +969,7 @@
     <Content Include="Script\Bootbox\bootbox.min.js" />
     <Content Include="Script\Bootbox\bootstrap.js" />
     <Content Include="Script\Bootbox\bootstrap.min.js" />
-    <Content Include="Script\controllers\Livro\detalhes-controller.js" />
+    <Content Include="app\controllers\Livro\detalhes-controller.js" />
     <Content Include="Script\Jquery\jquery-2.2.3.js" />
     <Content Include="Script\Jquery\jquery-2.2.3.min.js" />
     <Content Include="Script\Bootstrap\css\bootstrap-theme.css" />
@@ -981,11 +980,11 @@
     <Content Include="Script\Bootstrap\js\bootstrap.js" />
     <Content Include="Script\Bootstrap\js\bootstrap.min.js" />
     <Content Include="Script\Bootstrap\js\npm.js" />
-    <Content Include="Script\controllers\Livro\lista-controller.js" />
-    <Content Include="Script\Modulo.js" />
-    <Content Include="Script\services\livro-service.js" />
-    <Content Include="Script\Templates\Livro\Detalhes.html" />
-    <Content Include="Script\Templates\Livro\Index.html" />
+    <Content Include="app\controllers\Livro\lista-controller.js" />
+    <Content Include="app\Modulo.js" />
+    <Content Include="app\services\livro-service.js" />
+    <Content Include="app\Templates\Livro\Detalhes.html" />
+    <Content Include="app\Templates\Livro\Index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -999,7 +998,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Script\directives\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1027,9 +1025,6 @@
       <DependentUpon>Biblioteca.edmx</DependentUpon>
       <LastGenOutput>Biblioteca.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Script\Bootstrap\css\bootstrap-theme.css.map" />
