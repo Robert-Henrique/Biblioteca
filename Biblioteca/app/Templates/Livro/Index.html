@@ -37,6 +37,7 @@
         </table>
     </div>
     <div>
+        <h5>Página {{currentPage}} de {{totalItens}}</h5>
         <uib-pagination total-items="totalItens" ng-model="currentPage" ng-change="paginaAlterada()" max-size="maxSize" class="pagination-sm" boundary-links="true"></uib-pagination>
     </div>
 </div>
