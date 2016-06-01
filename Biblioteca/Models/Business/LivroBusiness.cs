@@ -15,6 +15,11 @@ namespace Biblioteca.Models.Business
             return bd.Livro.ToList();
         }
 
+        public IQueryable Obter2()
+        {
+            return bd.Livro;
+        }
+
         public Livro Obter(int _id)
         {
             return bd.Livro.Find(_id);

@@ -83,6 +83,6 @@ C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.Razor.xml
 C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.WebPages.xml
 C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.WebPages.Razor.xml
-C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
 C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\obj\Debug\Biblioteca.dll
 C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\obj\Debug\Biblioteca.pdb
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache

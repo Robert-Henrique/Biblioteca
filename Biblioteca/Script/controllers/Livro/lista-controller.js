@@ -1,11 +1,14 @@
-﻿
-app.controller("listaController", function ($scope, livroService) {
+﻿angular.module("app").controller("listaController", function ($scope, livroService) {
+
+    $scope.currentPage = 1;
+    $scope.maxSize = 10;
 
     $scope.livros = [];
 
     $scope.obterLivros = function () {
-        livroService.getLivros().success(function (data) {
-            $scope.livros = data;
+        livroService.getLivros($scope.currentPage).success(function (data) {
+            $scope.livros = data.livros;
+            $scope.totalItens = data.totalItens;
         }).error(function (erro) {
             console.log(erro);
         });
@@ -21,5 +24,9 @@ app.controller("listaController", function ($scope, livroService) {
                 });
             }
         });
+    };
+
+    $scope.paginaAlterada = function () {
+        $scope.obterLivros($scope.currentPage);
     };
 });

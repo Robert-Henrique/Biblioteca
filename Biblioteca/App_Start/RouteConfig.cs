@@ -13,6 +13,12 @@ namespace Biblioteca
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+           // routes.MapRoute(
+           //    name: "Livro",
+           //    url: "Livro/{action}/{range}",
+           //    defaults: new { controller = "Livro", action = "Index", range = UrlParameter.Optional }
+           //);
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

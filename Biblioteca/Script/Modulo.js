@@ -1,4 +1,6 @@
-﻿var app = angular.module("app", ['ngRoute'])
+﻿//angular.module("app", ['ui.bootstrap']);
+
+var app = angular.module("app", ['ngRoute', 'ui.bootstrap'])
     .config(function ($routeProvider,$locationProvider) {
     $routeProvider
         .when('/', {
@@ -6,15 +8,15 @@
             controller: 'listaController'
         })
         .when('/livros', {
-            templateUrl: 'Script/Livros/Livro/Index.html',
+            templateUrl: 'Script/Templates/Livro/Index.html',
             controller: 'detalhesController'
         })
         .when('/livros/detalhes', {
-            templateUrl: 'Script/Livros/Livro/Detalhes.html',
+            templateUrl: 'Script/Templates/Livro/Detalhes.html',
             controller: 'detalhesController'
         })
         .when('/livros/detalhes/:id', {
-            templateUrl: 'Script/Livros/Livro/Detalhes.html',
+            templateUrl: 'Script/Templates/Livro/Detalhes.html',
             controller: 'detalhesController'
         }).otherwise({
             redirectTo: '/'
