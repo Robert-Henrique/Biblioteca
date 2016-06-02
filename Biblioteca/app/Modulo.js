@@ -7,8 +7,7 @@ app.config(function ($routeProvider, $locationProvider) {
 
     $routeProvider
         .when('/', {
-            templateUrl: 'app/Templates/Livro/Index.html'
-            //controller: 'detalhesController'
+            templateUrl: 'app/Templates/Home/Index.html'
         })
         .when('/livros', {
             templateUrl: 'app/Templates/Livro/Index.html',
@@ -21,7 +20,14 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/livros/detalhes/:id', {
             templateUrl: 'app/Templates/Livro/Detalhes.html',
             controller: 'detalhesController'
-        }).otherwise({
+        })
+        .when('/cliente', {
+            templateUrl: 'app/Templates/Cliente/Index.html'
+        })
+        .when('/cliente/detalhes', {
+            templateUrl: 'app/Templates/Cliente/Detalhes.html'
+        })
+        .otherwise({
             redirectTo: '/'
         });
 });

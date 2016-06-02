@@ -126,6 +126,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CidadeController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\EstadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LivroController.cs" />
     <Compile Include="Global.asax.cs">
@@ -146,6 +149,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Biblioteca.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Business\CidadeBusiness.cs" />
+    <Compile Include="Models\Business\ClienteBusiness.cs" />
+    <Compile Include="Models\Business\EstadoBusiness.cs" />
     <Compile Include="Models\Business\LivroBusiness.cs" />
     <Compile Include="Models\Cidade.cs">
       <DependentUpon>Biblioteca.tt</DependentUpon>
@@ -165,6 +171,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="app\controllers\Cliente\detalhes-controller.js" />
+    <Content Include="app\controllers\Cliente\lista-controller.js" />
+    <Content Include="app\services\cidade-service.js" />
+    <Content Include="app\services\cliente-service.js" />
+    <Content Include="app\services\estado-service.js" />
+    <Content Include="app\Templates\Cliente\Detalhes.html" />
+    <Content Include="app\Templates\Cliente\Index.html" />
+    <Content Include="app\Templates\Home\Index.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

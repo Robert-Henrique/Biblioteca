@@ -105,7 +105,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="EstadoId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Cliente" Relationship="BibliotecaModel.FK__Cliente__CidadeI__5070F446" FromRole="Cidade" ToRole="Cliente" />
           <NavigationProperty Name="Estado" Relationship="BibliotecaModel.FK_dbo_Cidade_dbo_Estado_EstadoId" FromRole="Cidade" ToRole="Estado" />
         </EntityType>
         <EntityType Name="Cliente">
@@ -127,7 +126,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Cidade" Relationship="BibliotecaModel.FK_dbo_Cidade_dbo_Estado_EstadoId" FromRole="Estado" ToRole="Cidade" />
         </EntityType>
         <EntityType Name="Livro">
           <Key>

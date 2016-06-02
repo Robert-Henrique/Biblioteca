@@ -6,31 +6,31 @@ using System.Web;
 
 namespace Biblioteca.Models.Business
 {
-    public class LivroBusiness
+    public class ClienteBusiness
     {
         private BibliotecaEntities bd = new BibliotecaEntities();
 
-        public IQueryable<Livro> Obter()
+        public IQueryable<Cliente> Obter()
         {
-            return bd.Livro;
+            return bd.Cliente;
         }
 
-        public Livro Obter(int _id)
+        public Cliente Obter(int _id)
         {
-            return bd.Livro.Find(_id);
+            return bd.Cliente.Find(_id);
         }
 
-        public Livro Salvar(Livro _Livro)
+        public Cliente Salvar(Cliente _Cliente)
         {
             try
             {
-                if (_Livro.Id == 0)
-                    bd.Livro.Add(_Livro);
+                if (_Cliente.Id == 0)
+                    bd.Cliente.Add(_Cliente);
                 else
-                    bd.Entry(_Livro).State = EntityState.Modified;
-               
+                    bd.Entry(_Cliente).State = EntityState.Modified;
+
                 bd.SaveChanges();
-                return _Livro;
+                return _Cliente;
             }
             catch (Exception e)
             {
@@ -38,12 +38,12 @@ namespace Biblioteca.Models.Business
             }
         }
 
-        public bool Excluir(Livro _Livro)
+        public bool Excluir(Cliente _Cliente)
         {
             try
             {
-                Livro l = Obter(_Livro.Id);
-                bd.Livro.Remove(l);
+                Cliente l = Obter(_Cliente.Id);
+                bd.Cliente.Remove(l);
                 bd.SaveChanges();
                 return true;
             }
@@ -54,5 +54,3 @@ namespace Biblioteca.Models.Business
         }
     }
 }
-
-

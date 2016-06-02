@@ -14,9 +14,21 @@ namespace Biblioteca
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-               name: "Livro",
-               url: "Livro/Listar/{range}/{filtro}",
-               defaults: new { controller = "Livro", action = "Listar", range = UrlParameter.Optional, filtro = UrlParameter.Optional }
+                name: "Livro",
+                url: "Livro/Listar/{range}/{filtro}",
+                defaults: new { controller = "Livro", action = "Listar", range = UrlParameter.Optional, filtro = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+              name: "Cliente",
+              url: "Cliente/Listar/{range}/{filtro}",
+              defaults: new { controller = "Cliente", action = "Listar", range = UrlParameter.Optional, filtro = UrlParameter.Optional }
+           );
+
+            routes.MapRoute(
+              name: "Cidade",
+              url: "Cidade/Obter/{estadoId}",
+              defaults: new { controller = "Cidade", action = "Obter", Id = UrlParameter.Optional }
            );
 
             routes.MapRoute(

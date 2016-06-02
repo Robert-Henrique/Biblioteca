@@ -1,7 +1,7 @@
-﻿<div ng-controller="listaController" ng-init="obterLivros()">
-    <h2>Livros</h2>
+﻿<div ng-controller="listaClienteController" ng-init="obterClientes()">
+    <h2>Clientes</h2>
     <p>
-        <a href="#/livros/detalhes">Cadastrar Livro</a>
+        <a href="#/cliente/detalhes">Cadastrar Cliente</a>
     </p>
     <div class="form-group">
         <label>Filtrar</label>
@@ -13,22 +13,28 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Título</th>
-                    <th>Ano de Publicação</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Cidade</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="livro in livros">
-                    <td>{{livro.Id}}</td>
-                    <td>{{livro.Titulo}}</td>
-                    <td>{{livro.AnoPublicacao}}</td>
+                <tr ng-repeat="cliente in clientes">
+                    <td>{{cliente.Id}}</td>
+                    <td>{{cliente.Nome}}</td>
+                    <td>{{cliente.CPF}}</td>
+                    <td>{{cliente.Telefone}}</td>
+                    <td>{{cliente.Email}}</td>
+                    <td>{{cliente.Cidade}}</td>
                     <td>
-                        <a href="#livros/detalhes/{{livro.Id}}" class="btn btn-default btn-sm">
+                        <a href="#cliente/detalhes/{{cliente.Id}}" class="btn btn-default btn-sm">
                             <span class="glyphicon glyphicon-pencil"></span>
                         </a>
 
-                        <button ng-click="excluir(livro)" class="btn btn-default btn-sm">
+                        <button ng-click="excluir(cliente)" class="btn btn-default btn-sm">
                             <span class="glyphicon glyphicon-trash"></span>
                         </button>
                     </td>

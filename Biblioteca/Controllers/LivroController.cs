@@ -17,20 +17,21 @@ namespace Biblioteca.Controllers
         public JsonResult Listar(int range, string filtro)
         {
             range = (range - 1) * 10;
-            var livros = _livroBusiness.Obter2().Where(l => string.IsNullOrEmpty(filtro) || l.Titulo.Contains(filtro));
+            var livros = _livroBusiness.Obter().Where(l => string.IsNullOrEmpty(filtro) || l.Titulo.Contains(filtro));
 
             int total = livros.Count();
 
             return Json(new {
                 livros = livros.OrderBy(l => l.Id).Skip(range).Take(10),
-                totalItens = total
+                totalItens = total,
+                numPages = Math.Ceiling(Convert.ToDecimal(total) / 10)
             }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
         public JsonResult Obter(int? Id)
         {
-            var livro = _livroBusiness.Obter().Where(l => l.Id.Equals(Id)).FirstOrDefault();
+            var livro = _livroBusiness.Obter(Convert.ToInt32(Id));
             return Json(livro, JsonRequestBehavior.AllowGet);
         }
 
