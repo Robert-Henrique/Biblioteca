@@ -27,6 +27,9 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/cliente/detalhes', {
             templateUrl: 'app/Templates/Cliente/Detalhes.html'
         })
+        .when('/cliente/detalhes/:id', {
+            templateUrl: 'app/Templates/Cliente/Detalhes.html'
+        })
         .otherwise({
             redirectTo: '/'
         });

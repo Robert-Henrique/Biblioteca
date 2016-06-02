@@ -14,6 +14,9 @@
     }
 
     $scope.salvar = function (cliente) {
+
+        cliente.cidadeId = $scope.cidadeSelecionada.Id;
+
         clienteService.salvar(cliente).success(function (data) {
             bootbox.alert("Cliente salvo com sucesso.", function () {
                 $scope.voltar();
