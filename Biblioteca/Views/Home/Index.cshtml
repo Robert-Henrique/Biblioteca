@@ -12,10 +12,19 @@
     <script src="~/Script/Bootstrap/js/bootstrap.min.js"></script>
 
     <script src="~/Script/Bootbox/bootbox.js"></script>
-
     <script src="~/Script/AngularJS/angular.min.js"></script>
     <script src="~/Script/AngularJS/angular-route.js"></script>
     <script src="~/Script/Angular ui/ui-bootstrap-tpls-1.3.3.js"></script>
+    
+    <!-- plugin para adicinar máscaras-->
+    <script src="~/Script/Jquery/MaskedInput/jquery.maskedinput.min.js"></script>
+    <!---->
+
+    <!-- plugin para validação Jquery ValidationEngine-->
+    <link href="~/Script/Jquery/ValidationEngine/css/validationEngine.jquery.css" rel="stylesheet" />
+    <script src="~/Script/Jquery/ValidationEngine/js/jquery.validationEngine-pt_BR.js"></script>
+    <script src="~/Script/Jquery/ValidationEngine/js/jquery.validationEngine.js"></script>
+    <!---->
 
     <script src="~/app/Modulo.js"></script>
     <script src="~/app/services/livro-service.js"></script>
@@ -26,14 +35,31 @@
     <script src="~/app/controllers/Cliente/detalhes-controller.js"></script>
     <script src="~/app/services/estado-service.js"></script>
     <script src="~/app/services/cidade-service.js"></script>
+    <script src="~/app/directives/mask.js"></script>
+
+    <script type="text/javascript">
+    $(function () {
+
+        $("form").validationEngine('attach');
+        
+
+        bootbox.setDefaults({
+            title: "Atenção",
+            locale: "br"
+        });
+    });
+    </script>
+
 </head>
 <body>
-    <div class="container body-content">
-        <div ng-view></div>
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Biblioteca Pombus</p>
-        </footer>
-    </div>
+    <form name="form" ng-submit="form.$valid" novalidate>
+        <div class="container body-content">
+            <div ng-view></div>
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Biblioteca Pombus</p>
+            </footer>
+        </div>
+    </form>
 </body>
 </html>

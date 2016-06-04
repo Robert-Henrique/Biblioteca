@@ -20,6 +20,8 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="CPF" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="DataNascimento" Type="date" Nullable="false" />
+          <Property Name="Sexo" Type="varchar" MaxLength="1" Nullable="false" />
           <Property Name="Telefone" Type="varchar" MaxLength="20" />
           <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CidadeId" Type="int" Nullable="false" />
@@ -40,7 +42,7 @@
           <Property Name="Titulo" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="AnoPublicacao" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Cliente__CidadeI__5070F446">
+        <Association Name="FK__Cliente__CidadeI__6FE99F9F">
           <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
           <ReferentialConstraint>
@@ -71,7 +73,7 @@
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Livro" EntityType="Self.Livro" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Cliente__CidadeI__5070F446" Association="Self.FK__Cliente__CidadeI__5070F446">
+          <AssociationSet Name="FK__Cliente__CidadeI__6FE99F9F" Association="Self.FK__Cliente__CidadeI__6FE99F9F">
             <End Role="Cidade" EntitySet="Cidade" />
             <End Role="Cliente" EntitySet="Cliente" />
           </AssociationSet>
@@ -118,6 +120,8 @@
           <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CidadeId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cidade" Relationship="BibliotecaModel.FK__Cliente__CidadeI__5070F446" FromRole="Cliente" ToRole="Cidade" />
+          <Property Name="DataNascimento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Estado">
           <Key>
@@ -179,6 +183,8 @@
           <EntitySetMapping Name="Cliente">
             <EntityTypeMapping TypeName="BibliotecaModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
                 <ScalarProperty Name="CidadeId" ColumnName="CidadeId" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Telefone" ColumnName="Telefone" />

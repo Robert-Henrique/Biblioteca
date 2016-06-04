@@ -173,6 +173,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="app\controllers\Cliente\detalhes-controller.js" />
     <Content Include="app\controllers\Cliente\lista-controller.js" />
+    <Content Include="app\directives\mask.js" />
     <Content Include="app\services\cidade-service.js" />
     <Content Include="app\services\cliente-service.js" />
     <Content Include="app\services\estado-service.js" />
@@ -996,6 +997,14 @@
     <Content Include="app\services\livro-service.js" />
     <Content Include="app\Templates\Livro\Detalhes.html" />
     <Content Include="app\Templates\Livro\Index.html" />
+    <Content Include="Script\Jquery\MaskedInput\jquery.maskedinput.min.js" />
+    <Content Include="Script\Jquery\ValidationEngine\css\customMessages.css" />
+    <Content Include="Script\Jquery\ValidationEngine\css\screenshot.png" />
+    <Content Include="Script\Jquery\ValidationEngine\css\template.css" />
+    <Content Include="Script\Jquery\ValidationEngine\css\validationEngine.jquery.css" />
+    <Content Include="Script\Jquery\ValidationEngine\js\jquery.validationEngine-pt_BR.js" />
+    <Content Include="Script\Jquery\ValidationEngine\js\jquery.validationEngine.js" />
+    <Content Include="Script\Jquery\ValidationEngine\js\other-validations.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

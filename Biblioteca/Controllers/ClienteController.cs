@@ -16,17 +16,22 @@ namespace Biblioteca.Controllers
         public JsonResult Listar(int range, string filtro)
         {
             range = (range - 1) * 10;
-            var clientes = _clienteBusiness.Obter().Where(l => string.IsNullOrEmpty(filtro) || l.Nome.Contains(filtro));
+            var clientes = _clienteBusiness.Obter().Where(l => string.IsNullOrEmpty(filtro) || l.Nome.Contains(filtro)
+                                                                                            || l.CPF.Contains(filtro)
+                                                                                            || l.Email.Contains(filtro)
+                                                                                            || l.Cidade.Nome.Contains(filtro));
 
             int total = clientes.Count();
 
             return Json(new
             {
-                clientes = clientes.OrderBy(l => l.Id).Skip(range).Take(10).Select(c => new
+                clientes = clientes.OrderBy(l => l.Id).Skip(range).Take(10).ToList().Select(c => new
                 {
                     Id = c.Id,
                     Nome = c.Nome,
                     CPF = c.CPF,
+                    DataNascimento = c.DataNascimento.ToShortDateString(),
+                    Sexo = c.Sexo,
                     Telefone = c.Telefone,
                     Email = c.Email,
                     Cidade = c.Cidade.Nome
@@ -40,7 +45,17 @@ namespace Biblioteca.Controllers
         public JsonResult Obter(int? Id)
         {
             var cliente = _clienteBusiness.Obter(Convert.ToInt32(Id));
-            return Json(cliente, JsonRequestBehavior.AllowGet);
+            return Json(new
+            {
+                Id = cliente.Id,
+                Nome = cliente.Nome,
+                CPF = cliente.CPF,
+                DataNascimento = cliente.DataNascimento.ToShortDateString(),
+                Sexo = cliente.Sexo,
+                Telefone = cliente.Telefone,
+                Email = cliente.Email,
+                Cidade = cliente.Cidade.Nome
+            }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

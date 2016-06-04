@@ -20,6 +20,8 @@ namespace Biblioteca.Models
         public string Telefone { get; set; }
         public string Email { get; set; }
         public int CidadeId { get; set; }
+        public System.DateTime DataNascimento { get; set; }
+        public string Sexo { get; set; }
     
         public virtual Cidade Cidade { get; set; }
     }

@@ -34,6 +34,8 @@
     <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="CidadeId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Cidade" Relationship="BibliotecaModel.FK__Cliente__CidadeI__5070F446" FromRole="Cliente" ToRole="Cidade" />
+    <Property Name="DataNascimento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Estado">
     <Key>

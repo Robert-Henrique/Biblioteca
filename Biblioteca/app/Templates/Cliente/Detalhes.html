@@ -1,50 +1,62 @@
 ﻿<div>
     <h2>Adicionar Cliente</h2>
 </div>
-<form name="detalhesForm" ng-submit="detalhesForm.$valid" novalidate>
-    <div ng-controller="detalhesClienteController" class="form-horizontal">
-        <hr />
-        <div class="form-group" ng-show="cliente.Id > 0">
-            <label class="control-label col-md-2">ID:</label>
-            <div class="col-md-1">
-                <input id="nome" class="form-control" type="text" data-ng-model="cliente.Id" ng-disabled="true" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-2">Nome:</label>
-            <div class="col-md-3">
-                <input id="nome" class="form-control" type="text" data-ng-model="cliente.Nome" placeholder="Informe o nome..." required />
-            </div>
-            <label class="control-label col-md-2">CPF:</label>
-            <div class="col-md-3">
-                <input id="nome" class="form-control" type="text" data-ng-model="cliente.CPF" placeholder="Informe o CPF..." required />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-2">Telefone:</label>
-            <div class="col-md-3">
-                <input id="nome" class="form-control" type="text" data-ng-model="cliente.Telefone" placeholder="Informe o telefone..." required />
-            </div>
-            <label class="control-label col-md-2">E-mail:</label>
-            <div class="col-md-3">
-                <input id="nome" class="form-control" type="text" data-ng-model="cliente.Email" placeholder="Informe o e-mail..." required />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-2">Estado</label>
-            <div class="col-md-3">
-                <select ng-model="estadoSelecionado" ng-options="estado.Nome for estado in estados" class="form-control"></select>
-            </div>
-            <label class="control-label col-md-2">Cidade</label>
-            <div class="col-md-3">
-                <select ng-model="cidadeSelecionada" ng-options="cidade.Nome for cidade in cidades" class="form-control"></select>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <button class="btn btn-default btn-info" type="button" data-ng-click="salvar(cliente)" ng-disabled="detalhesForm.$invalid">Salvar</button>
-                <button ng-click="voltar()" class="btn btn-default btn-info" type="submit">Voltar</button>
-            </div>
+
+<div ng-controller="detalhesClienteController" class="form-horizontal">
+    <hr />
+    <div class="form-group" ng-show="cliente.Id > 0">
+        <label class="control-label col-md-2">ID:</label>
+        <div class="col-md-1">
+            <input id="nome" class="form-control" type="text" data-ng-model="cliente.Id" ng-disabled="true" />
         </div>
     </div>
-</form>
+    <div class="form-group">
+        <label class="control-label col-md-2">Nome:</label>
+        <div class="col-md-3">
+            <input id="nome" class="validate[required], form-control" type="text" data-ng-model="cliente.Nome" placeholder="Informe o nome..." required/>
+        </div>
+        <label class="control-label col-md-2">CPF:</label>
+        <div class="col-md-3">
+            <input id="cpf" class="validate[required], form-control" type="text" data-ng-model="cliente.CPF" placeholder="Informe o CPF..." cpf-mask required />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Data de Nascimento:</label>
+        <div class="col-md-3">
+            <input id="data" class="validate[required, custom[date]], form-control" type="text" ng-model="cliente.DataNascimento" placeholder="Informe a data de nascimento..." date-mask required />
+        </div>
+        <label class="control-label col-md-2">Sexo:</label>
+        <div class="col-md-3">
+            <!--<input id="sexo" class="validate[required], form-control" type="text" data-ng-model="cliente.Sexo" placeholder="Informe o sexo..." required />-->
+            <label class="radio-inline"><input type="radio" name="optradio" ng-model="cliente.Sexo" class="validate[required]" value="M" required>Masculino</label>
+            <label class="radio-inline"><input type="radio" name="optradio" ng-model="cliente.Sexo" class="validate[required]" value="F" required>Feminino</label>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Telefone:</label>
+        <div class="col-md-3">
+            <input id="telefone" class="form-control" type="text" data-ng-model="cliente.Telefone" placeholder="Informe o telefone..." phone-Mask required />
+        </div>
+        <label class="control-label col-md-2">E-mail:</label>
+        <div class="col-md-3">
+            <input id="email" class="validate[required, custom[email]], form-control" type="text" data-ng-model="cliente.Email" placeholder="Informe o e-mail..." required />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Estado</label>
+        <div class="col-md-3">
+            <select class="validate[required], form-control"  ng-model="estadoSelecionado" ng-options="estado.Nome for estado in estados" required></select>
+        </div>
+        <label class="control-label col-md-2">Cidade</label>
+        <div class="col-md-3">
+            <select class="validate[required], form-control" ng-model="cidadeSelecionada" ng-options="cidade.Nome for cidade in cidades" required></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn-default btn-info" type="button" data-ng-click="salvar(cliente)" ng-disabled="form.$invalid">Salvar</button>
+            <button ng-click="voltar()" class="btn btn-default btn-info" type="submit">Voltar</button>
+        </div>
+    </div>
+</div>

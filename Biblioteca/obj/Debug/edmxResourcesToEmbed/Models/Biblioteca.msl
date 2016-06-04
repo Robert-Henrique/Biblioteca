@@ -13,6 +13,8 @@
     <EntitySetMapping Name="Cliente">
       <EntityTypeMapping TypeName="BibliotecaModel.Cliente">
         <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
           <ScalarProperty Name="CidadeId" ColumnName="CidadeId" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Telefone" ColumnName="Telefone" />
