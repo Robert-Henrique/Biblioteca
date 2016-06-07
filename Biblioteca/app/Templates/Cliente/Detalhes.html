@@ -17,7 +17,7 @@
         </div>
         <label class="control-label col-md-2">CPF:</label>
         <div class="col-md-3">
-            <input id="cpf" class="validate[required], form-control" type="text" data-ng-model="cliente.CPF" placeholder="Informe o CPF..." cpf-mask required />
+            <input id="cpf" class="validate[required], form-control" type="text" data-ng-model="cliente.CPF" placeholder="Informe o CPF..." cpf-mask ng-disabled="cliente.Id > 0" required />
         </div>
     </div>
     <div class="form-group">
@@ -27,7 +27,6 @@
         </div>
         <label class="control-label col-md-2">Sexo:</label>
         <div class="col-md-3">
-            <!--<input id="sexo" class="validate[required], form-control" type="text" data-ng-model="cliente.Sexo" placeholder="Informe o sexo..." required />-->
             <label class="radio-inline"><input type="radio" name="optradio" ng-model="cliente.Sexo" class="validate[required]" value="M" required>Masculino</label>
             <label class="radio-inline"><input type="radio" name="optradio" ng-model="cliente.Sexo" class="validate[required]" value="F" required>Feminino</label>
         </div>
@@ -46,11 +45,11 @@
     <div class="form-group">
         <label class="control-label col-md-2">Estado</label>
         <div class="col-md-3">
-            <select class="validate[required], form-control"  ng-model="estadoSelecionado" ng-options="estado.Nome for estado in estados" required></select>
+            <select class="validate[required], form-control" ng-model="estadoSelecionado" ng-options="estado.Nome for estado in estados track by estado.Id" required></select>
         </div>
         <label class="control-label col-md-2">Cidade</label>
         <div class="col-md-3">
-            <select class="validate[required], form-control" ng-model="cidadeSelecionada" ng-options="cidade.Nome for cidade in cidades" required></select>
+            <select class="validate[required], form-control" ng-model="cidadeSelecionada" ng-options="cidade.Nome for cidade in cidades track by cidade.Id" required></select>
         </div>
     </div>
     <div class="form-group">

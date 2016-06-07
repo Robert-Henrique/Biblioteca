@@ -16,16 +16,20 @@ namespace Biblioteca.Controllers
         public JsonResult Listar(int range, string filtro)
         {
             range = (range - 1) * 10;
-            var clientes = _clienteBusiness.Obter().Where(l => string.IsNullOrEmpty(filtro) || l.Nome.Contains(filtro)
-                                                                                            || l.CPF.Contains(filtro)
-                                                                                            || l.Email.Contains(filtro)
-                                                                                            || l.Cidade.Nome.Contains(filtro));
+            var clientes = _clienteBusiness.Obter().OrderBy(l => l.Id).Skip(range).Take(10).ToList();
 
+            clientes = clientes.Where(l => string.IsNullOrEmpty(filtro) || l.Nome.Contains(filtro)
+                                                                        || l.CPF.Contains(filtro)
+                                                                        || l.DataNascimento.ToShortDateString().Contains(filtro)
+                                                                        || l.Sexo.Contains(filtro)
+                                                                        || l.Telefone.Contains(filtro)
+                                                                        || l.Email.Contains(filtro)
+                                                                        || l.Cidade.Nome.Contains(filtro)).ToList();
             int total = clientes.Count();
 
             return Json(new
             {
-                clientes = clientes.OrderBy(l => l.Id).Skip(range).Take(10).ToList().Select(c => new
+                clientes = clientes.Select(c => new
                 {
                     Id = c.Id,
                     Nome = c.Nome,
@@ -54,7 +58,7 @@ namespace Biblioteca.Controllers
                 Sexo = cliente.Sexo,
                 Telefone = cliente.Telefone,
                 Email = cliente.Email,
-                Cidade = cliente.Cidade.Nome
+                Cidade = cliente.Cidade
             }, JsonRequestBehavior.AllowGet);
         }
 
