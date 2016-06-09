@@ -58,7 +58,8 @@ namespace Biblioteca.Controllers
                 Sexo = cliente.Sexo,
                 Telefone = cliente.Telefone,
                 Email = cliente.Email,
-                Cidade = cliente.Cidade
+                CidadeId = cliente.CidadeId,
+                EstadoId = cliente.Cidade.EstadoId
             }, JsonRequestBehavior.AllowGet);
         }
 
