@@ -1,13 +1,9 @@
 ﻿<div ng-controller="listaController" ng-init="obterLivros()">
     <h2>Livros</h2>
-    <p>
-        <a href="#/livros/detalhes">Cadastrar Livro</a>
-    </p>
     <div class="form-group">
         <label>Filtrar</label>
         <input type="text" ng-model="filtro" ng-change="pesquisaAlterada()" class="form-control" placeholder="Digite para filtrar...">
     </div>
-
     <div class="table-responsive">
         <table class="table table-condensed table-striped table-bordered table-hover no-margin">
             <thead>

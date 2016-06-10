@@ -7,23 +7,25 @@
 
     <script src="~/Script/Jquery/jquery-2.2.3.min.js"></script>
     <!-- Latest compiled and minified CSS -->
-    <link href="~/Script/Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <!-- Latest compiled and minified JavaScript -->
     <script src="~/Script/Bootstrap/js/bootstrap.min.js"></script>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
 
     <script src="~/Script/Bootbox/bootbox.js"></script>
     <script src="~/Script/AngularJS/angular.min.js"></script>
     <script src="~/Script/AngularJS/angular-route.js"></script>
     <script src="~/Script/Angular ui/ui-bootstrap-tpls-1.3.3.js"></script>
-    
+
     <!-- plugin para adicinar máscaras-->
     <script src="~/Script/Jquery/MaskedInput/jquery.maskedinput.min.js"></script>
     <!---->
-
     <!-- plugin para validação Jquery ValidationEngine-->
     <link href="~/Script/Jquery/ValidationEngine/css/validationEngine.jquery.css" rel="stylesheet" />
     <script src="~/Script/Jquery/ValidationEngine/js/jquery.validationEngine-pt_BR.js"></script>
     <script src="~/Script/Jquery/ValidationEngine/js/jquery.validationEngine.js"></script>
+    <link href="~/Script/Jquery/ValidationEngine/css/validationEngine.jquery.css" rel="stylesheet" />
     <!---->
 
     <script src="~/app/Modulo.js"></script>
@@ -38,28 +40,42 @@
     <script src="~/app/directives/mask.js"></script>
 
     <script type="text/javascript">
-    $(function () {
+        $(function () {
+            $("form").validationEngine('attach');
 
-        $("form").validationEngine('attach');
-        
-
-        bootbox.setDefaults({
-            title: "Atenção",
-            locale: "br"
+            bootbox.setDefaults({
+                title: "Atenção",
+                locale: "br"
+            });
         });
-    });
     </script>
 
 </head>
 <body>
-    <form name="form" ng-submit="form.$valid" novalidate>
-        <div class="container body-content">
-            <div ng-view></div>
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - Biblioteca Pombus</p>
-            </footer>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#/livros" class="navbar-brand">Biblioteca</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/livros">Livro</a></li>
+                    <li><a href="#/cliente">Cliente</a></li>
+                </ul>
+            </div>
         </div>
-    </form>
+    </div>
+    <div class="container body-content">
+        <div ng-view></div>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Insight</p>
+        </footer>
+    </div>
 </body>
 </html>
