@@ -86,3 +86,9 @@ C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.WebPages.R
 C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\obj\Debug\Biblioteca.dll
 C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\obj\Debug\Biblioteca.pdb
 C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Net.Http.Formatting.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.Http.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.Http.WebHost.dll
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Net.Http.Formatting.xml
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.Http.xml
+C:\Users\Robert\Documents\GitHub\Biblioteca\Biblioteca\bin\System.Web.Http.WebHost.xml

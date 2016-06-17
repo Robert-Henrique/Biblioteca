@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -174,18 +175,21 @@
     <Content Include="app\controllers\Cliente\detalhes-controller.js" />
     <Content Include="app\controllers\Cliente\lista-controller.js" />
     <Content Include="app\directives\mask.js" />
+    <Content Include="app\directives\menu.js" />
+    <Content Include="app\directives\rodape.js" />
+    <Content Include="app\Templates\Rodape.html" />
     <Content Include="app\services\cidade-service.js" />
     <Content Include="app\services\cliente-service.js" />
     <Content Include="app\services\estado-service.js" />
     <Content Include="app\Templates\Cliente\Detalhes.html" />
     <Content Include="app\Templates\Cliente\Index.html" />
     <Content Include="app\Templates\Home\Index.html" />
+    <Content Include="app\Templates\Login\Form.html" />
+    <Content Include="app\Templates\Menu.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\modal.css" />
-    <Content Include="Content\Site.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

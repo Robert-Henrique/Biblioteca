@@ -7,23 +7,32 @@ app.config(function ($routeProvider, $locationProvider) {
 
     $routeProvider
         .when('/', {
-            templateUrl: 'app/Templates/Home/Index.html'
+            templateUrl: 'app/Templates/Login/Form.html'
         })
+
+        .when('/Home', {
+             templateUrl: 'app/Templates/Home/Index.html'
+        })
+
         .when('/livros', {
             templateUrl: 'app/Templates/Livro/Index.html',
             controller: 'detalhesController'
         })
+
         .when('/livros/detalhes', {
             templateUrl: 'app/Templates/Livro/Detalhes.html',
             controller: 'detalhesController'
         })
+
         .when('/livros/detalhes/:id', {
             templateUrl: 'app/Templates/Livro/Detalhes.html',
             controller: 'detalhesController'
         })
+
         .when('/cliente', {
             templateUrl: 'app/Templates/Cliente/Index.html'
         })
+
         .when('/cliente/detalhes', {
             templateUrl: 'app/Templates/Cliente/Detalhes.html'
         })

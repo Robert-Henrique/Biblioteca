@@ -11,8 +11,6 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="~/Script/Bootstrap/js/bootstrap.min.js"></script>
 
-    <link href="~/Content/Site.css" rel="stylesheet" />
-
     <script src="~/Script/Bootbox/bootbox.js"></script>
     <script src="~/Script/AngularJS/angular.min.js"></script>
     <script src="~/Script/AngularJS/angular-route.js"></script>
@@ -37,7 +35,12 @@
     <script src="~/app/controllers/Cliente/detalhes-controller.js"></script>
     <script src="~/app/services/estado-service.js"></script>
     <script src="~/app/services/cidade-service.js"></script>
+
+    <!-- Referência das diretivas-->
     <script src="~/app/directives/mask.js"></script>
+    <script src="~/app/directives/menu.js"></script>
+    <script src="~/app/directives/rodape.js"></script>
+    <!---->
 
     <script type="text/javascript">
         $(function () {
@@ -52,30 +55,8 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="#/livros" class="navbar-brand">Biblioteca</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#/livros">Livro</a></li>
-                    <li><a href="#/cliente">Cliente</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <div class="container body-content">
         <div ng-view></div>
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Insight</p>
-        </footer>
     </div>
 </body>
 </html>

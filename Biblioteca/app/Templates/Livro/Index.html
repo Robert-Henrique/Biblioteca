@@ -1,4 +1,5 @@
-﻿<div ng-controller="listaController" ng-init="obterLivros()">
+﻿<menu></menu>
+<div ng-controller="listaController" ng-init="obterLivros()">
     <h2>Livros</h2>
     <div class="form-group">
         <label>Filtrar</label>
@@ -37,5 +38,5 @@
         <uib-pagination total-items="totalItens" ng-model="currentPage" ng-change="paginaAlterada()" max-size="maxSize" class="pagination-sm" boundary-links="true"></uib-pagination>
     </div>
 </div>
-
+<rodape></rodape>
 
